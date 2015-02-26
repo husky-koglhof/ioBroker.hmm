@@ -1,0 +1,162 @@
+<html>
+  
+  <!-- these 4 files always have to be included -->
+  <link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../lib/css/jqGrid/ui.jqgrid-4.5.4.css"/>
+  <link rel="stylesheet" type="text/css" href="../../lib/css/jquery.multiselect-1.13.css"/>
+  <script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
+  <script type="text/javascript" src="../../lib/js/jqGrid/jquery.jqGrid-4.5.4.min.js"></script>
+  <script type="text/javascript" src="../../lib/js/jqGrid/grid.locale-all.js"></script>
+  
+  <!-- these two file always have to be included -->
+  <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+  <script type="text/javascript" src="../../js/translate.js"></script>
+  <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+  
+  <!-- you have to define 2 functions in the global scope: -->
+  <script type="text/javascript">
+    var devices = [];
+    systemDictionary = {
+      "HomeMatic Manager adapter settings": {
+        "de": "HomeMatic Manager adapter Einstellungen",
+      },
+      "rpcListenIp_":           {"en": "RPC Listen Ip:",          "de": "RPC Listen IP:"},
+      "webServerPort_":         {"en": "WebServer Port:",         "de": "WebServer Port:"},
+      "rpcListenPort_":         {"en": "RPC Listen Port:",        "de": "RPC Listen Port:"},
+      "rpcListenPortBin_":      {"en": "RPC Listen Port Binary:", "de": "RPC Listen Port Binary:"},
+      "datastorePath_":         {"en": "DataStore Path:",         "de": "DatenSpeicherpfad:"},
+      "language_":              {"en": "Language:",               "de": "Sprache:"},
+      "help_tip":               {
+        "en": "On save the adapter restarts with new configuration immediately",
+        "de": "Beim Speichern von Einstellungen der Adapter wird sofort neu gestartet.",
+      },
+    };
+  
+  // the function loadSettings has to exist ...
+  function load(settings, onChange) {
+    if (!settings) return;
+    
+    getIPs(function(ips) {
+        for (var i = 0; i < ips.length; i++) {
+           $('#rpcListenIp').append('<option value="' + ips[i].address + '">' + ips[i].name + '</option>');
+        }
+        $('#rpcListenIp.value').val(settings.rpcListenIp);
+    });
+           
+    changed = false;
+    $('#save').button("disable");
+           
+    devices = settings.devices || [];
+
+    for (var key in settings) {
+        setValue(key, settings[key]);
+    }
+           
+    editTable('devices', ['name', 'type', 'ip', 'port', 'isCcu', 'init'], devices, 10);
+    
+    if (devices.length == 0) {
+        var $grid = $('#devices');
+        var instances = {};
+        getAdapterInstances('hm-rpc', function (arr) {
+            instances = arr;
+            for (var i = 0; i < arr.length; i++) {
+                var native = arr[i].native;
+                var ccu = native.daemon;
+                var type = "BidCos-RF";
+                if (ccu == "Homegear") {
+                    ccu = "true";
+                } else {
+                    ccu = "false";
+                    type = "";
+                }
+                var name = arr[i]._id;
+                if (name.indexOf("system.adapter.") == 0) {
+                    name = name.substring(15, name.length);
+                }
+                addToTable("devices", {name: name, ip: native.homematicAddress, type: type, port: native.homematicPort, isCcu: ccu, init: 'true'}, $grid, true);
+            }
+        });
+    }
+  }
+  
+// ... and the function save has to exist.
+  // you have to make sure the callback is called with the settings object as first param!
+  function save(callback) {
+    // example: select elements with class=value and build settings object
+    var obj = {};
+    $('.value').each(function () {
+        var $this = $(this);
+        if ($this.attr('type') == 'checkbox') {
+            obj[$this.attr('id')] = $this.prop('checked');
+        } else {
+            obj[$this.attr('id')] = $this.val();
+        }
+    });
+                     
+    // Get edited table
+    obj.devices = getTableResult('devices', ['name', 'type', 'ip', 'port', 'isCcu', 'init']);
+
+    changed = false;
+    $('#save').button("disable");
+
+    callback(obj, {localLink: 'http://%ip%:' + obj.webServerPort});
+  }
+
+function setValue(id, value) {
+    // example: select elements with id=key and class=value and insert value
+    if ($('#' + id + '.value').attr('type') == 'checkbox') {
+        $('#' + id + '.value').prop('checked', value).change(function() {
+            changed = true;
+            $('#save').button("enable");
+        });
+    } else {
+        $('#' + id + '.value').val(value).change(function() {
+            changed = true;
+            $('#save').button("enable");
+        }).keyup(function() {
+        // Chack that only numbers entered
+        if ($(this).hasClass('number')) {
+            var val = $(this).val();
+            if (val) {
+                var newVal = '';
+                for (var i = 0; i < val.length; i++) {
+                    if (val[i] >= '0' && val[i] <= '9') {
+                        newVal += val[i];
+                    }
+                }
+                                                      
+                if (val != newVal) $(this).val(newVal);
+             }
+        }
+                                                      
+        changed = true;
+        $('#save').button("enable");
+     });
+  }
+}
+
+  </script>
+  
+  <!-- you have to put your config page in a div with id adapter-container -->
+  <div id="adapter-container">
+    
+    <table><tr><td><img src="example.png"></td><td><h3 class="translate">Homematic Manager adapter settings</h3></td></tr></table>
+    
+    <table>
+      <p class="translate">help_tip</p>
+
+      <tr><td class="translate">rpcListenIp_</td><td>        <select class="value" id="rpcListenIp"></select></td></tr>
+      <tr><td class="translate">webServerPort_</td><td>      <input  class="value number" id="webServerPort" size="5" maxlength="5"/></td></tr>
+      <tr><td class="translate">rpcListenPort_</td><td>      <input  class="value number" id="rpcListenPort" size="5" maxlength="5"/></td></tr>
+      <tr><td class="translate">rpcListenPortBin_</td><td>   <input  class="value number" id="rpcListenPortBin" size="5" maxlength="5"/></td></tr>
+      <tr><td class="translate">datastorePath_</td><td>      <input  class="value" id="rpcListenPortBin" size="20" maxlength="20"/></td></tr>
+      <tr><td class="translate">language_</td><td>           <input  class="value" id="rpcListenPortBin" size="5" maxlength="2"/></td></tr>
+
+      <table id="devices"></table><div id="pager-devices"></div>
+    </table>
+    
+    
+  </div>
+</html>
