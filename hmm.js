@@ -73,8 +73,8 @@ var notifications;
 var saveTimer;
 
 function startHMM() {
-    var args = [__dirname + '/node_modules/homematicmanager/main.js'];
-    adapter.log.info('Starting homematicmanager: ' + args.join(' '));
+    var args = [__dirname + '/node_modules/homematic-manager/main.js'];
+    adapter.log.info('Starting homematic-manager: ' + args.join(' '));
   
     HMMProcess = spawn('node', args);
     HMMProcess.stdout.on('data', function (data) {
@@ -132,7 +132,7 @@ function writeSettings() {
     output["datastorePath"] = adapter.config.datastorePath;
     output["language"] = adapter.config.language;
 
-    fs.writeFileSync(__dirname + '/node_modules/homematicmanager/config.json', JSON.stringify(output));
+    fs.writeFileSync(__dirname + '/node_modules/homematic-manager/config.json', JSON.stringify(output));
 }
 
 function main() {
