@@ -5,6 +5,7 @@
   "main": "hmm.js",
   "dependencies": {
     "fs.notify": "^0.0.4",
+    "homematic-manager": "https://github.com/hobbyquaker/homematic-manager/tarball/master/"
   },
   "devDependencies": {},
   "scripts": {
