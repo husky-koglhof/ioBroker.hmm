@@ -9,11 +9,12 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 * iobroker.hmm wird mittels npm install iobroker.hmm im Root Verzeichnis des ioBroker installiert.
 * In diesem Zuge wird der Homematic-Manager heruntergeladen.
-* Danach wird ein "npm install" durchgeführt um alle Abhängigkeiten zu laden.
 
 ### Konfiguration
 
-#### In der Admin Oberfläche werden automatisch alle vorhandenen hm-rpc Adapter eingebunden und konfiguriert.
+* Die Einstellungen des Adapters müssen bei der Erstinstallation geöffnet, überprüft und gespeichert werden.
+* In diesem Zuge werden automatisch alle vorhandenen hm-rpc Adapter eingebunden und konfiguriert.
+* Hierbei wird die config.json für den Homematic-Manager geschrieben.
 
 ## Todo
 
