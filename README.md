@@ -25,6 +25,9 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Changelog
 
+### 0.0.14
+* (husky-koglhof) keywords hinzugefügt
+
 ### 0.0.11
 * (husky-koglhof) npm Upload, Versionsabgleich
 

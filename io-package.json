@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "0.0.13",
+        "version":                  "0.0.14",
         "title":                    "Node.js Homematic Manager Adapter",
         "desc":                     "Javascript/Node.js based hmm adapter",
         "platform":                 "Javascript/Node.js",
@@ -15,6 +15,11 @@
         "supportStopInstance":      true,
         "messagebox":               true
     },
+    "keywords": [
+      "ioBroker",
+      "homematic",
+      "homematic manager"
+    ],
     "native": {
       "webServerPort": 8080,
       "rpcListenIp": "0.0.0.0",
