@@ -1,6 +1,6 @@
 {
   "name": "iobroker.hmm",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Homematic Manager Adapter for ioBroker",
   "main": "hmm.js",
   "repository": {
