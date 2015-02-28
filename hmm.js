@@ -2,9 +2,9 @@
  *
  *      ioBroker Homematic Manager Adapter
  *
- *      (c) 2015 versteckt<husky.koglhof@icloud.com>
+ *      (c) 2015 husky-koglhof<husky.koglhof@icloud.com>
  *
- *      Apache 2.0 License
+ *      [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
  *
  */
 /* jshint -W097 */// jshint strict:false
