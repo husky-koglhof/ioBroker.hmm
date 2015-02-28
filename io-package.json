@@ -1,15 +1,15 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "0.0.1",
+        "version":                  "0.0.7",
         "title":                    "Node.js Homematic Manager Adapter",
         "desc":                     "Javascript/Node.js based hmm adapter",
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "example.png",
         "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/adapter/example/admin/example.png",
-        "loglevel":                 "debug",
-        "localLink":                "http://%ip%:%port%",
+        "loglevel":                 "info",
+        "localLink":                "http://%ip%:%webServerPort%",
         "enabled":                  false,
         "singletonHost":            true,
         "supportStopInstance":      true,

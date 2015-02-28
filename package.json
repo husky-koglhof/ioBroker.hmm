@@ -1,8 +1,18 @@
 {
   "name": "iobroker.hmm",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Homematic Manager Adapter for ioBroker",
   "main": "hmm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/husky-koglhof/ioBroker.hmm"
+  },
+  "homepage": "https://github.com/husky-koglhof/ioBroker.hmm",
+  "keywords": [
+    "ioBroker",
+    "homematic",
+    "homematic manager"
+  ],
   "dependencies": {
     "fs.notify": "^0.0.4",
     "homematic-manager": "https://github.com/hobbyquaker/homematic-manager/tarball/master/"
