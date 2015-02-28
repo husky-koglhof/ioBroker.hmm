@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "0.0.8",
+        "version":                  "0.0.11",
         "title":                    "Node.js Homematic Manager Adapter",
         "desc":                     "Javascript/Node.js based hmm adapter",
         "platform":                 "Javascript/Node.js",

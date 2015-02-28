@@ -20,8 +20,15 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 * Doku, Doku, Doku
 * Englische Übersetzung
 * Russische Übersetzung
+* locallink ip in Übersicht dynamisch verändern
 
 ## Changelog
+
+### 0.0.11
+* (husky-koglhof) npm Upload, Versionsabgleich
+
+### 0.0.9
+* (husky-koglhof) npm install Script für homematic-manager Auto Installation
 
 ### 0.0.8
 * (husky-koglhof) Korrektur Author, Lizenz
