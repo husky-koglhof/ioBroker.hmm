@@ -13,8 +13,7 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ### Konfiguration
 
-#### In der Admin Oberfläche werden automatisch alle vorhandenen hm-rpc Adapter eingebunden und
- konfiguriert.
+#### In der Admin Oberfläche werden automatisch alle vorhandenen hm-rpc Adapter eingebunden und konfiguriert.
 
 ## Todo
 
@@ -24,10 +23,13 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Changelog
 
+### 0.0.8
+* (husky-koglhof) Korrektur Author, Lizenz
+
 ### 0.0.7
-* (versteckt) Anpassungen in package.json und io-package.json
-* (versteckt) Hinzufügen der Lizenz und Readme.md
-* (versteckt) Hinzufügen der beiden PullRequests
+* (husky-koglhof) Anpassungen in package.json und io-package.json
+* (husky-koglhof) Hinzufügen der Lizenz und Readme.md
+* (husky-koglhof) Hinzufügen der beiden PullRequests
     add dependency for homematic-manager (GermanBluefox)
     Change module name of homematicmanager (GermanBluefox)
 
@@ -36,7 +38,7 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Lizenz
 
-Copyright (c) 2014 versteckt
+Copyright (c) 2014 husky-koglhof
 
 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 

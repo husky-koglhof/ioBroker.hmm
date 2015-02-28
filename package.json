@@ -1,6 +1,6 @@
 {
   "name": "iobroker.hmm",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Homematic Manager Adapter for ioBroker",
   "main": "hmm.js",
   "repository": {
@@ -21,6 +21,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "versteckt <husky.koglhof@icloud.com>",
-  "license": "GPL"
+  "author": "husky-koglhof <husky.koglhof@icloud.com>",
+  "license": "CC BY-NC-SA"
 }
