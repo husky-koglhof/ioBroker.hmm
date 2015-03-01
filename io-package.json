@@ -25,8 +25,8 @@
       "rpcListenIp": "0.0.0.0",
       "rpcListenPort": 9090,
       "rpcListenPortBin": 9091,
-      "datastorePath": "../../../../../../iobroker-data/hmm/",
-      "datastorePathComment": "datastorePath is relative to ioBroker/node_modules/ioBroker.js-controller/node_modules/ioBroker.hmm/node_modules/homematic-manager/main.js",
+      "datastorePath": "../../../../iobroker-data/hmm/",
+      "datastorePathComment": "datastorePath is relative to ioBroker/node_modules/ioBroker.hmm/node_modules/homematic-manager/main.js",
       "language": "de"
     },
     "objects": [
