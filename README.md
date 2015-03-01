@@ -9,6 +9,7 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 * iobroker.hmm wird mittels npm install iobroker.hmm im Root Verzeichnis des ioBroker installiert.
 * In diesem Zuge wird der Homematic-Manager heruntergeladen.
+* Web Interface ist unter http://ip:8090 erreichbar
 
 ### Konfiguration
 
@@ -24,6 +25,9 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 * locallink ip in Übersicht dynamisch verändern
 
 ## Changelog
+
+### 0.0.16
+* (bluefox) kleine anpassungen
 
 ### 0.0.14
 * (husky-koglhof) keywords hinzugefügt

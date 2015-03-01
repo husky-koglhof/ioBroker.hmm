@@ -2,7 +2,7 @@
  *
  *      ioBroker Homematic Manager Adapter
  *
- *      (c) 2015 husky-koglhof<husky.koglhof@icloud.com>
+ *      Copyright (c) 2015 husky-koglhof<husky.koglhof@icloud.com>
  *
  *      [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
  *
@@ -35,21 +35,22 @@ adapter.on('ready', function () {
 // is called if a subscribed state changes
 //adapter.on('stateChange', function (id, state) {
 //});
-function unloadHMM (callback) {
+function unloadHMM(callback) {
     // Stop hmm
     stopping = true;
     if (HMMProcess) {
-        adapter.log.info("kill hmm task");
+        adapter.log.info('kill hmm task');
         HMMProcess.kill();
         HMMProcess = null;
     }
-    if(notifications) notifications.close();
+    if (notifications) notifications.close();
   
     if (callback) callback();
 }
 
 function processMessage(obj) {
     if (!obj || !obj.command) return;
+
     switch (obj.command) {
         case 'update': {
         }
@@ -67,6 +68,7 @@ function processMessages() {
        }
     });
 }
+
 var HMMProcess;
 var stopping;
 var notifications;
@@ -107,6 +109,7 @@ function writeSettings() {
     var daemons = {};
     var daemon = {};
     var output = {};
+
     for (var i = 0; i < adapter.config.devices.length; i++) {
         var name = adapter.config.devices[i].name;
         var type = adapter.config.devices[i].type;
