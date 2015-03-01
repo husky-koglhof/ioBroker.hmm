@@ -1,13 +1,13 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "0.0.15",
+        "version":                  "0.0.16",
         "title":                    "Node.js Homematic Manager Adapter",
-        "desc":                     "Javascript/Node.js based hmm adapter",
+        "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
-        "icon":                     "example.png",
-        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/adapter/example/admin/example.png",
+        "icon":                     "hmm.png",
+        "extIcon":                  "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/hmm.png",
         "loglevel":                 "info",
         "localLink":                "http://%ip%:%webServerPort%",
         "enabled":                  false,
@@ -21,11 +21,12 @@
       "homematic manager"
     ],
     "native": {
-      "webServerPort": 8080,
+      "webServerPort": 8090,
       "rpcListenIp": "0.0.0.0",
       "rpcListenPort": 9090,
       "rpcListenPortBin": 9091,
-      "datastorePath": "datastore/",
+      "datastorePath": "../../../../../../iobroker-data/hmm/",
+      "datastorePathComment": "datastorePath is relative to ioBroker/node_modules/ioBroker.js-controller/node_modules/ioBroker.hmm/node_modules/homematic-manager/main.js",
       "language": "de"
     },
     "objects": [
