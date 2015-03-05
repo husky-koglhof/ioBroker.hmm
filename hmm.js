@@ -14,8 +14,7 @@
 var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 
 var adapter = utils.adapter({
-    name: 'hmm',
-    systemConfig: true, // get the system configuration as systemConfig parameter of adapter
+    name:  'hmm',
     unload: unloadHMM
 });
 
