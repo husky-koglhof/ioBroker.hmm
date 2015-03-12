@@ -137,8 +137,30 @@ function writeSettings() {
     fs.writeFileSync(__dirname + '/node_modules/homematic-manager/config.json', JSON.stringify(output));
 }
 
+function createTab() {
+    /**
+     <div id="tabs" style="display: none">
+     <ul>
+     <li><a href="#tab-adapters"     class="translate">Adapters</a></li>
+     <li><a href="#tab-instances"    class="translate">Instances</a></li>
+     **/
+
+
+    // $("#tabs").append("Homematic-Manager");
+    // $("#content").append("<p id='" + $(link).attr("rel") + "_content'>" + $(link).attr("title") + "</p>");
+
+    /*
+     if (id.match(/^system\.adapter\.node-red\.[0-9]+$/) && obj && obj.common && obj.common.enabled) {
+        $("#a-tab-node-red").show();
+        if ($('#tabs').tabs('option', 'active') == 5) $("#tab-node-red").show();
+        $('#iframe-node-red').height($(window).height() - 55);
+        $('#iframe-node-red').attr('src', 'http://' + location.hostname + ':' + obj.native.port);
+     }
+     */
+}
 function main() {
     // Create settings for hmm
+    createTab();
     writeSettings();
     startHMM();
 }
