@@ -26,7 +26,7 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Changelog
 
-### 0.0.17
+### 0.0.17 
 * (husky-koglhof) Datastore Path und Language korrigiert
 
 ### 0.0.16
