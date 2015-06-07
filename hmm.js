@@ -18,7 +18,7 @@ var adapter = utils.adapter({
     unload: unloadHMM
 });
 
-var fs =      require('fs');
+var fs = require('fs');
 var spawn =   require('child_process').spawn;
 var Notify =  require('fs.notify');
 
@@ -134,7 +134,17 @@ function writeSettings() {
     output["datastorePath"] = adapter.config.datastorePath;
     output["language"] = adapter.config.language;
 
-    fs.writeFileSync(__dirname + '/node_modules/homematic-manager/config.json', JSON.stringify(output));
+    //fs.writeFileSync(__dirname + '/node_modules/homematic-manager/config.json', JSON.stringify(output));
+
+    // Todo: Create $HOME/.hm-manager Directory und put Config into it
+    var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
+    var storePath = homedir+"/.hm-manager";
+
+    if (!fs.existsSync(storePath)){
+        fs.mkdirSync(storePath);
+    }
+
+    fs.writeFileSync(storePath+"/hm-manager.json", JSON.stringify(output));
 }
 
 function createTab() {

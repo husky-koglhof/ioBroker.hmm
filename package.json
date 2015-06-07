@@ -1,6 +1,6 @@
 {
   "name": "iobroker.hmm",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "Homematic Manager Adapter for ioBroker",
   "main": "hmm.js",
   "repository": {
@@ -15,12 +15,23 @@
   ],
   "dependencies": {
     "fs.notify": "^0.0.4",
-    "homematic-manager": "https://github.com/hobbyquaker/homematic-manager/tarball/master/"
+    "homematic-manager": ">=1.0.8"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "husky-koglhof <husky.koglhof@icloud.com>",
-  "license": "CC BY-NC-SA"
+  "author": {
+    "name": "husky-koglhof",
+    "email": "husky.koglhof@icloud.com"
+  },
+  "license": "CC BY-NC-SA",
+  "readmeFilename": "README.md",
+  "gitHead": "b225875f8d6a64c3449f839972506d2e7ea469c4",
+  "bugs": {
+    "url": "https://github.com/husky-koglhof/ioBroker.hmm/issues"
+  },
+  "_id": "iobroker.hmm@0.0.19",
+  "_shasum": "c5ff8e34322cf0c5d1b52d9a66f3f4472d588f78",
+  "_from": "iobroker.hmm@*"
 }

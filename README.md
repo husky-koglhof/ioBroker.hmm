@@ -26,6 +26,9 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Changelog
 
+### 0.1.0
+* (husky-koglhof) Paket Abhängigkeit für homematic-manager angepasst
+
 ### 0.0.17 
 * (husky-koglhof) Datastore Path und Language korrigiert
 
