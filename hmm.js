@@ -137,7 +137,7 @@ function writeSettings() {
     //fs.writeFileSync(__dirname + '/node_modules/homematic-manager/config.json', JSON.stringify(output));
 
     // Todo: Create $HOME/.hm-manager Directory und put Config into it
-    var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
+    var homedir = (process.platform === 'win32') ? process.env.USERPROFILE : process.env.HOME;
     var storePath = homedir+"/.hm-manager";
 
     if (!fs.existsSync(storePath)){
