@@ -13,13 +13,15 @@
         "enabled":                  false,
         "singletonHost":            true,
         "supportStopInstance":      true,
-        "messagebox":               true
+        "messagebox":               true,
+        "readme":                   "https://github.com/husky-koglhof/iobroker.hmm/blob/master/README.md",
+        "adminTab": {
+          "singleton":  true,
+          "name":       "HMM",
+          "link":       "http://%ip%:%webServerPort%"
+        },
+        "keywords": ["ioBroker","homematic","homematic manager"]
     },
-    "keywords": [
-      "ioBroker",
-      "homematic",
-      "homematic manager"
-    ],
     "native": {
       "webServerPort": 8090,
       "rpcListenIp": "0.0.0.0",
