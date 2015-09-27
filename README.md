@@ -26,6 +26,9 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 
 ## Changelog
 
+### 1.0.0
+* (husky-koglhof) Es wurden keine Fehler mehr gemeldet, Namen und Bild angepasst.
+
 ### 0.1.1
 * (husy-koglhof) Anpassung Pfad für Windows Installation
 

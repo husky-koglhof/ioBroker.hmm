@@ -1,13 +1,13 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "0.1.1",
-        "title":                    "Node.js Homematic Manager Adapter",
+        "version":                  "1.0.0",
+        "title":                    "Homematic Manager",
         "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "hmm.png",
-        "extIcon":                  "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/hmm.png",
+        "extIcon":                  "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/homematic.png",
         "loglevel":                 "info",
         "localLink":                "http://%ip%:%webServerPort%",
         "enabled":                  false,
