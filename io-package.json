@@ -6,7 +6,7 @@
         "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
-        "icon":                     "hmm.png",
+        "icon":                     "homematic.png",
         "extIcon":                  "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/homematic.png",
         "loglevel":                 "info",
         "localLink":                "http://%ip%:%webServerPort%",
