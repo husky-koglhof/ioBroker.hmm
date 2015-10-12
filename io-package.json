@@ -20,7 +20,8 @@
           "name":       "HMM",
           "link":       "http://%ip%:%webServerPort%"
         },
-        "keywords": ["ioBroker","homematic","homematic manager"]
+        "keywords": ["ioBroker","homematic","homematic manager"],
+        "type":                     "hardware"
     },
     "native": {
       "webServerPort": 8090,
