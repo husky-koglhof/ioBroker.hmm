@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "hmm",
-        "version":                  "1.0.0",
+        "version":                  "1.0.1",
         "title":                    "Homematic Manager",
         "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
         "platform":                 "Javascript/Node.js",
@@ -14,6 +14,7 @@
         "singletonHost":            true,
         "supportStopInstance":      true,
         "messagebox":               true,
+        "type":                     "hardware",
         "readme":                   "https://github.com/husky-koglhof/iobroker.hmm/blob/master/README.md",
         "adminTab": {
           "singleton":  true,

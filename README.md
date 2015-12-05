@@ -25,6 +25,8 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 * locallink ip in Übersicht dynamisch verändern
 
 ## Changelog
+### 1.0.1
+* (bluefox) Type Hardware hinzugefügt
 
 ### 1.0.0
 * (husky-koglhof) Es wurden keine Fehler mehr gemeldet, Namen und Bild angepasst.
