@@ -43,7 +43,7 @@ function unloadHMM(callback) {
         HMMProcess = null;
     }
     if (notifications) notifications.close();
-  
+
     if (callback) callback();
 }
 
@@ -76,7 +76,7 @@ var saveTimer;
 function startHMM() {
     var args = [__dirname + '/node_modules/homematic-manager/main.js'];
     adapter.log.info('Starting homematic-manager: ' + args.join(' '));
-  
+
     HMMProcess = spawn('node', args);
     HMMProcess.stdout.on('data', function (data) {
         if (!data) return;
@@ -84,7 +84,7 @@ function startHMM() {
         if (data[data.length - 2] == '\r' && data[data.length - 1] == '\n') data = data.substring(0, data.length - 2);
         if (data[data.length - 2] == '\n' && data[data.length - 1] == '\r') data = data.substring(0, data.length - 2);
         if (data[data.length - 1] == '\r') data = data.substring(0, data.length - 1);
-                       
+
         if (data.indexOf("Error: ") != -1) {
             adapter.log.error(data);
         } else {
@@ -94,7 +94,7 @@ function startHMM() {
      HMMProcess.stderr.on('data', function (data) {
          adapter.log.error(data);
      });
-  
+
      HMMProcess.on('exit', function (exitCode) {
          adapter.log.info('hmm exited with ' + exitCode);
          HMMProcess = null;
@@ -109,21 +109,23 @@ function writeSettings() {
     var daemon = {};
     var output = {};
 
-    for (var i = 0; i < adapter.config.devices.length; i++) {
-        var name = adapter.config.devices[i].name;
-        var type = adapter.config.devices[i].type;
-        var ip = adapter.config.devices[i].ip;
-        var port = adapter.config.devices[i].port;
-        var isCcu = adapter.config.devices[i].isCcu;
-        var init = adapter.config.devices[i].init;
-        daemon["type"] = type;
-        daemon["ip"] = ip;
-        daemon["port"] = port;
-        daemon["isCcu"] = isCcu;
-        daemon["init"] = init;
-        daemons[name] = JSON.parse(JSON.stringify(daemon));
+    if (adapter.config.devices) {
+        for (var i = 0; i < adapter.config.devices.length; i++) {
+            var name = adapter.config.devices[i].name;
+            var type = adapter.config.devices[i].type;
+            var ip = adapter.config.devices[i].ip;
+            var port = adapter.config.devices[i].port;
+            var isCcu = adapter.config.devices[i].isCcu;
+            var init = adapter.config.devices[i].init;
+            daemon["type"] = type;
+            daemon["ip"] = ip;
+            daemon["port"] = port;
+            daemon["isCcu"] = isCcu;
+            daemon["init"] = init;
+            daemons[name] = JSON.parse(JSON.stringify(daemon));
+        }
     }
-  
+
     output["webServerPort"] = adapter.config.webServerPort;
     output["rpcListenIp"] = adapter.config.rpcListenIp;
     output["rpcListenPort"] = adapter.config.rpcListenPort;
@@ -174,4 +176,3 @@ function main() {
     writeSettings();
     startHMM();
 }
-
