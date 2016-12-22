@@ -17,9 +17,12 @@
     "fs.notify": "^0.0.4",
     "homematic-manager": ">=1.0.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/mocha/bin/mocha"
   },
   "author": {
     "name": "husky-koglhof",
