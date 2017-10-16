@@ -1,38 +1,46 @@
 {
     "common": {
-        "name":                     "hmm",
-        "version":                  "1.0.1",
-        "title":                    "Homematic Manager",
-        "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
-        "platform":                 "Javascript/Node.js",
-        "mode":                     "daemon",
-        "icon":                     "hmm.png",
-        "extIcon":                  "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/homematic.png",
-        "loglevel":                 "info",
-        "localLink":                "http://%ip%:%webServerPort%",
-        "enabled":                  false,
-        "singletonHost":            true,
-        "supportStopInstance":      true,
-        "messagebox":               true,
-        "type":                     "hardware",
-        "readme":                   "https://github.com/husky-koglhof/iobroker.hmm/blob/master/README.md",
+        "name": "hmm",
+        "version": "1.0.1",
+        "title": "Homematic Manager",
+        "desc": "Javascript/Node.js based Homematic Manager Adapter",
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "hmm.png",
+        "extIcon": "https://raw.githubusercontent.com/husky-koglhof/ioBroker.hmm/master/admin/homematic.png",
+        "loglevel": "info",
+        "localLink": "http://%ip%:%webServerPort%",
+        "enabled": false,
+        "singletonHost": true,
+        "supportStopInstance": true,
+        "messagebox": true,
+        "type": "iot-systems",
+        "readme": "https://github.com/husky-koglhof/iobroker.hmm/blob/master/README.md",
         "adminTab": {
-          "singleton":  true,
-          "name":       "HMM",
-          "link":       "http://%ip%:%webServerPort%"
+            "singleton": true,
+            "name": "HMM",
+            "link": "http://%ip%:%webServerPort%"
         },
-        "keywords": ["ioBroker","homematic","homematic manager"]
+        "keywords": [
+            "ioBroker",
+            "homematic",
+            "homematic manager"
+        ],
+        "authors": [
+            {
+                "name": "husky-koglhof",
+                "email": "husky.koglhof@icloud.com"
+            }
+        ]
     },
     "native": {
-      "webServerPort": 8090,
-      "rpcListenIp": "0.0.0.0",
-      "rpcListenPort": 9090,
-      "rpcListenPortBin": 9091,
-      "datastorePath": "../../../../iobroker-data/hmm/",
-      "datastorePathComment": "datastorePath is relative to ioBroker/node_modules/ioBroker.hmm/node_modules/homematic-manager/main.js",
-      "language": "de"
+        "webServerPort": 8090,
+        "rpcListenIp": "0.0.0.0",
+        "rpcListenPort": 9090,
+        "rpcListenPortBin": 9091,
+        "datastorePath": "../../../../iobroker-data/hmm/",
+        "datastorePathComment": "datastorePath is relative to ioBroker/node_modules/ioBroker.hmm/node_modules/homematic-manager/main.js",
+        "language": "de"
     },
-    "objects": [
-
-    ]
+    "objects": []
 }
