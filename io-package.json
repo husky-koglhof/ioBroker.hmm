@@ -3,7 +3,11 @@
         "name":                     "hmm",
         "version":                  "1.0.1",
         "title":                    "Homematic Manager",
-        "desc":                     "Javascript/Node.js based Homematic Manager Adapter",
+        "desc":                     {
+            "en": "Javascript/Node.js based Homematic Manager Adapter",
+            "de": "Adapter zur ReGa freien Verwaltung von Homematic-Geräten \nbasierend auf Homematic-Manager",
+            "ru": "Javascript/Node.js based Homematic Manager Adapter"
+        },
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "hmm.png",
