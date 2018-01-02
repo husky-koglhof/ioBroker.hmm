@@ -18,11 +18,11 @@
     "homematic-manager": ">=1.0.8"
   },
   "devDependencies": {
-    "mocha": "^3.5.3",
+    "mocha": "^4.1.0",
     "chai": "^4.1.2"
   },
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha"
+    "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "author": {
     "name": "husky-koglhof",
