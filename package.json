@@ -15,12 +15,12 @@
   ],
   "dependencies": {
     "fs.notify": "^0.0.4",
-    "homematic-manager": ">=1.0.8"
+    "homematic-manager": ">=1.0.8",
+    "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "^4.1.0",
-    "chai": "^4.1.2",
-    "@iobroker/adapter-core": "^1.0.3"
+    "chai": "^4.1.2"
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --exit"
