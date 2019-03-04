@@ -16,6 +16,7 @@
         "messagebox": true,
         "type": "iot-systems",
         "readme": "https://github.com/husky-koglhof/iobroker.hmm/blob/master/README.md",
+        "license": "CC BY-NC-SA 4.0",
         "adminTab": {
             "singleton": true,
             "name": "HMM",
