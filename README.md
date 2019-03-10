@@ -1,5 +1,5 @@
 # iobroker.hmm
-
+![Number of Installations](http://iobroker.live/badges/hmm-installed.svg) ![Number of Installations](http://iobroker.live/badges/hmm-stable.svg) 
 ## Dokumentation
 
 Der Adapter Homematic-Manager (kurz iobroker.hmm) bindet die Homematic Manager Web-Schnittstelle von
