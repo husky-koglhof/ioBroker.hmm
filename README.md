@@ -65,7 +65,7 @@ hobbyquaker (https://github.com/hobbyquaker/homematic-manager/) ein.
 ### 0.0.6
 * (versteckt) initial Release
 
-## Lizenz
+## License
 
 Copyright (c) 2015 husky-koglhof
 
