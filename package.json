@@ -15,11 +15,15 @@
   ],
   "dependencies": {
     "fs.notify": "^0.0.4",
-    "homematic-manager": ">=1.0.8"
+    "homematic-manager": ">=1.0.8",
+    "@iobroker/adapter-core": "^1.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^4.1.0",
+    "chai": "^4.1.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "author": {
     "name": "husky-koglhof",
